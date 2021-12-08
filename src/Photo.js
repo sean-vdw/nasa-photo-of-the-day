@@ -23,9 +23,10 @@ function Photo() {
 
     return (
         <div className='photo-container'>
+            <h1>NASA Photo of the Day</h1>
             {
                 <>
-                <img src={photo}></img>
+                <img src={photo} alt='NASA Space Image'></img>
                 </>
             }
         </div>
