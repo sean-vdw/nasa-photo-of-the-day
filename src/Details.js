@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BASE_URL, API_KEY } from '../constants/keys';
+import axios from "axios";
+import "./App.css";
 
 
 
