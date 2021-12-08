@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Photo from "./Photo";
 import Details from "./Details";
+import { BASE_URL, API_KEY } from '../constants/keys';
 
 function App() {
   return (
