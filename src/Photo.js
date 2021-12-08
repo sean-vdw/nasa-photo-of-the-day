@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BASE_URL, API_KEY } from '../constants/keys';
+import { BASE_URL, API_KEY } from './keys';
 import axios from "axios";
 import "./App.css";
 
@@ -9,7 +9,7 @@ import "./App.css";
 function Photo() {
     return (
         <div className='photo-container'>
-            <img></img>
+            <img src=''></img>
         </div>
     )
 }
