@@ -6,6 +6,11 @@ import "./App.css";
 import Photo from "./Photo";
 import Details from "./Details";
 
+import { 
+  Navbar,
+  NavbarBrand 
+} from 'reactstrap';
+
 function App() {
   const [photo, setPhoto] = useState([]);
 
@@ -25,10 +30,13 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <Photo />
-        <Details />
-      </div>
+      <Navbar className="navbar-dark bg-dark">
+        <NavbarBrand>
+          <img src="./assets/nasa-logo.png"></img>
+        </NavbarBrand>
+      </Navbar>
+      <Photo />
+      <Details />
     </div>
   );
 }
