@@ -2,7 +2,20 @@ import React, { useState, useEffect } from "react";
 import { BASE_URL, API_KEY } from './keys';
 import axios from "axios";
 import "./App.css";
+import { Container } from 'reactstrap';
+import styled from "styled-components";
 
+const StyledCont = styled.div`
+  background: rgb(188,182,204);
+  background: linear-gradient(86deg, rgba(188,182,204,1) 0%, rgba(183,199,226,1) 50%, rgba(188,182,204,1) 100%);
+`
+
+const StyledImage = styled.img`
+  margin: 5% 0;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.75); 
+  box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.75);
+`
 
 function Photo() {
     const [photo, setPhoto] = useState([]);
@@ -22,14 +35,9 @@ function Photo() {
     }, [])
 
     return (
-        <div className='photo-container'>
-            <h1>NASA Photo of the Day</h1>
-            {
-                <>
-                <img src={photo} alt='NASA Space Image'></img>
-                </>
-            }
-        </div>
+      <StyledCont >
+        <StyledImage src={photo} alt='NASA Space Image'></StyledImage>
+      </StyledCont>
     )
 }
 

@@ -8,7 +8,8 @@ import Details from "./Details";
 
 import { 
   Navbar,
-  NavbarBrand 
+  NavbarBrand,
+  Container 
 } from 'reactstrap';
 
 function App() {
@@ -29,14 +30,16 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Navbar className="navbar-dark bg-dark">
-        <NavbarBrand>
-          <img src="./assets/nasa-logo.png"></img>
-        </NavbarBrand>
+    <div className='App'>
+      <Navbar className='navbar-dark bg-dark'>
+        <Container>
+          <NavbarBrand href='../public/index.html'>NASA Photo of the Day &#128640;</NavbarBrand>
+        </Container>
       </Navbar>
-      <Photo />
-      <Details />
+      <div className="d-flex flex-column">
+        <Photo />
+        <Details />
+      </div>
     </div>
   );
 }

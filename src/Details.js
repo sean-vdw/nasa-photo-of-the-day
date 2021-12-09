@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import { BASE_URL, API_KEY } from './keys';
 import axios from "axios";
 import "./App.css";
+import styled from "styled-components";
+
+const StyledDetails = styled.div`
+    background-color: ${props => props.theme.primaryBg};
+		color: ${props => props.theme.primaryTxt};
+		text-align: center;
+		padding: 5% 4%;
+`
 
 function Details() {
     const [title, setTitle] = useState('');
@@ -24,13 +32,13 @@ function Details() {
     }, [])
 
     return (
-        <div className='details'>
-            <div className='details-box'>
-                <p className='photo-details'><b>Title:</b><br/>{title}</p>
-                <p className='photo-details'><b>Date:</b><br/>{date}</p>
-                <p className='photo-details'><b>Explanation:</b><br/>{expl}</p>
-            </div>
-        </div>
+			<StyledDetails>
+				<div className='d-flex flex-column justify-content-center'>
+					<p><b>Title:</b><br/>{title}</p>
+					<p><b>Date:</b><br/>{date}</p>
+					<p><b>Explanation:</b><br/>{expl}</p>
+				</div>
+		</StyledDetails>
     )
 }
 
