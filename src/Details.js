@@ -3,6 +3,17 @@ import { BASE_URL, API_KEY } from './keys';
 import axios from "axios";
 import "./App.css";
 import styled from "styled-components";
+import { Button } from 'reactstrap';
+
+const NewButton = styled(Button)`
+	width: 20%;
+	margin: 1.5% auto;
+	transition: all 0.1s ease-in-out;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+`
 
 const StyledDetails = styled.div`
     background-color: ${props => props.theme.primaryBg};
@@ -15,6 +26,7 @@ function Details() {
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
     const [expl, setExpl] = useState('');
+		const [source, setSource] = useState('');
 
     useEffect(() => {
         const fetchDetails = () => {
@@ -23,6 +35,7 @@ function Details() {
                     setTitle(res.data.title);
                     setDate(res.data.date);
                     setExpl(res.data.explanation);
+										setSource(res.data.hdurl);
                 })
                 .catch(err => {
                     debugger
@@ -37,6 +50,7 @@ function Details() {
 					<p><b>Title:</b><br/>{title}</p>
 					<p><b>Date:</b><br/>{date}</p>
 					<p><b>Explanation:</b><br/>{expl}</p>
+					<NewButton href={source} className='btn btn-primary btn-lg' >See Full Image</NewButton>
 				</div>
 		</StyledDetails>
     )

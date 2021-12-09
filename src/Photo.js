@@ -15,6 +15,7 @@ const StyledImage = styled.img`
   border-radius: 8px;
   -webkit-box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.75); 
   box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.75);
+  width: 35%;
 `
 
 function Photo() {
